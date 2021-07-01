@@ -1,7 +1,7 @@
 export default function Homepage() {
     return (
-        <div className="flex flex-col w-full items-center justify-center flex-1 text-center">
-            <p>Nepali Ghar Body Page</p>
+        <div className="flex items-center justify-center w-full h-24 border-t">
+            Home Page Nepali Ghar Body
         </div>
-       )
+    )
 }
