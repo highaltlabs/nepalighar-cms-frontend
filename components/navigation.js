@@ -73,7 +73,7 @@ function classNames(...classes) {
 
 export default function Navigation({navs}) {
     return (
-        <Popover className="relative bg-white">
+        <Popover className="relative bg-transparent">
             {({ open }) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
