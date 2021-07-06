@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navigation from "../components/navigation";
 import Homepage from "./homepage";
-import {fetchAPI} from "../lib/api";
+import {fetchNavigationItemsAPI} from "../lib/api";
 
 export default function Home({posts}) {
   return (
@@ -29,7 +29,7 @@ export default function Home({posts}) {
 }
 
 export async function getStaticProps() {
-    const posts = (await fetchAPI()) || []
+    const posts = (await fetchNavigationItemsAPI()) || []
     return {
         props: { posts },
     }

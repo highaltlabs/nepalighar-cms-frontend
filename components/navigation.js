@@ -73,11 +73,11 @@ function classNames(...classes) {
 
 export default function Navigation({navs}) {
     return (
-        <Popover className="relative bg-transparent">
+        <Popover className="absolute z-30 w-full bg-transparent">
             {({ open }) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
-                        <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
+                        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
                             <div className="flex justify-start lg:w-0 lg:flex-1">
                                 <a href="#">
                                     <span className="sr-only">Workflow</span>
@@ -93,7 +93,7 @@ export default function Navigation({navs}) {
                             <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                 {navs && navs.map((eachNav, index) =>
                                     ((eachNav.navigation_items.length === 0) ?
-                                        <a href="#" key={index} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                        <a href="#" key={index} className="text-base font-small text-dark hover:text-dark-900">
                                             {eachNav.name}
                                         </a> :
                                         <Popover className="relative" key={index}>
@@ -101,8 +101,8 @@ export default function Navigation({navs}) {
                                                 <>
                                                     <Popover.Button
                                                         className={classNames(
-                                                            open ? 'text-gray-900' : 'text-gray-500',
-                                                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                                                            open ? 'text-dark-900' : 'text-dark-900',
+                                                            'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white-500'
                                                         )}>
                                                         <span>{eachNav.name}</span>
                                                         <ChevronDownIcon
@@ -146,10 +146,6 @@ export default function Navigation({navs}) {
                                 )}
                             </Popover.Group>
                             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                                <a href="#"
-                                   className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                                    Donate
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -179,7 +175,7 @@ export default function Navigation({navs}) {
                                     </div>
                                 </div>
                                 <div className="px-2 pt-2 pb-3 space-y-1">
-                                    {navs.map((item) => (
+                                    {navs && navs.map((item) => (
                                         <a
                                             key={item.name}
                                             href={item.href}
