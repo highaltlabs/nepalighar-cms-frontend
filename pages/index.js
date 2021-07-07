@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Navigation from "../components/navigation";
+import Navbar from "../components/Navbar";
 import Homepage from "./homepage";
 import {fetchNavigationItemsAPI} from "../lib/api";
+import Footer from "../components/Footer";
 
 export default function Home({posts}) {
   return (
@@ -11,24 +12,15 @@ export default function Home({posts}) {
         <link rel="icon" href="/logo.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 text-center">
-          <Navigation navs={posts}/>
+          <Navbar navs={posts}/>
           <Homepage/>
       </main>
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Designed by{' '} Nepali Ghar
-        </a>
-      </footer>
+     <Footer/>
     </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const posts = (await fetchNavigationItemsAPI()) || []
     return {
         props: { posts },
