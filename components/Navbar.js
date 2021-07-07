@@ -5,13 +5,13 @@ import {
     XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import Avatar from "../components/image";
+import Avatar from "./Image";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Navigation({navs}) {
+export default function Navbar({navs}) {
     return (
         <Popover className="absolute z-30 w-full bg-transparent">
             {({ open }) => (
@@ -19,10 +19,6 @@ export default function Navigation({navs}) {
                     <div className="mx-auto px-4 sm:px-6">
                         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
                             <div className="flex justify-start lg:w-0 lg:flex-1">
-                                <a href="#">
-                                    <span className="sr-only">Workflow</span>
-                                    <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'50'} height={'50'}/>
-                                </a>
                             </div>
                             <div className="-mr-2 -my-2 md:hidden">
                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
