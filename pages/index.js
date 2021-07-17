@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Navbar from "../components/Navbar";
 import Homepage from "./homepage";
-import {fetchNavigationItemsAPI} from "../lib/api";
+import { fetchNavigationItemsAPI } from "../lib/api";
 import Footer from "../components/Footer";
 
-export default function Home({posts}) {
+export default function Home({ navigationMenuItems }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
@@ -12,17 +12,17 @@ export default function Home({posts}) {
         <link rel="icon" href="/logo.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 text-center">
-          <Navbar navs={posts}/>
-          <Homepage/>
+        <Navbar navs={navigationMenuItems} />
+        <Homepage />
       </main>
-     <Footer/>
+      <Footer />
     </div>
   )
 }
 
 export async function getServerSideProps() {
-    const posts = (await fetchNavigationItemsAPI()) || []
-    return {
-        props: { posts },
-    }
+  const navigationMenuItems = (await fetchNavigationItemsAPI()) || []
+  return {
+    props: { navigationMenuItems }
+  }
 }
