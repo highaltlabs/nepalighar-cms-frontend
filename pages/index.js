@@ -12,7 +12,7 @@ export default function Home({ navigationMenuItems }) {
         <link rel="icon" href="/logo.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 text-center">
-        <Navbar navs={navigationMenuItems} />
+        <Navbar navs={ navigationMenuItems } />
         <Homepage />
       </main>
       <Footer />
