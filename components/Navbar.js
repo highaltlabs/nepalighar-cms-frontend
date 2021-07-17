@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import {
     MenuIcon,
@@ -29,9 +30,12 @@ export default function Navbar({navs}) {
                             <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                 {navs && navs.map((eachNav, index) =>
                                     ((eachNav.navigation_items.length === 0) ?
-                                        <a href="#" key={index} className="text-base font-small text-dark hover:text-dark-900">
-                                            {eachNav.name}
-                                        </a> :
+                                        <Link href={`${eachNav.name === 'Home' ? '/' : '/' + eachNav.sort_order}`} key={index}>
+                                            <a className="text-base font-small text-dark hover:text-dark-900"
+                                            title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
+                                                {eachNav.name}
+                                            </a>
+                                        </Link>:
                                         <Popover className="relative" key={index}>
                                             {({ open }) => (
                                                 <>
