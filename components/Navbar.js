@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import {
     MenuIcon,
@@ -11,7 +12,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar({navs}) {
+export default function Navbar({ navs }) {
     return (
         <Popover className="absolute z-30 w-full bg-transparent">
             {({ open }) => (
@@ -28,57 +29,60 @@ export default function Navbar({navs}) {
                             </div>
                             <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                 {navs && navs.map((eachNav, index) =>
-                                    ((eachNav.navigation_items.length === 0) ?
-                                        <a href="#" key={index} className="text-base font-small text-dark hover:text-dark-900">
+                                ((eachNav.navigation_items.length === 0) ?
+                                    <Link href={`${eachNav.name === 'Home' ? '/' : '/' + eachNav.sort_order}`} key={index}>
+                                        <a className="text-base font-small text-dark hover:text-dark-900"
+                                            title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                             {eachNav.name}
-                                        </a> :
-                                        <Popover className="relative" key={index}>
-                                            {({ open }) => (
-                                                <>
-                                                    <Popover.Button
+                                        </a>
+                                    </Link> :
+                                    <Popover className="relative" key={index}>
+                                        {({ open }) => (
+                                            <>
+                                                <Popover.Button
+                                                    className={classNames(
+                                                        open ? 'text-dark-900' : 'text-dark-900',
+                                                        'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white-500'
+                                                    )}>
+                                                    <span>{eachNav.name}</span>
+                                                    <ChevronDownIcon
                                                         className={classNames(
-                                                            open ? 'text-dark-900' : 'text-dark-900',
-                                                            'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white-500'
-                                                        )}>
-                                                        <span>{eachNav.name}</span>
-                                                        <ChevronDownIcon
-                                                            className={classNames(
-                                                                open ? 'text-gray-600' : 'text-gray-400',
-                                                                'ml-2 h-5 w-5 group-hover:text-gray-500'
-                                                            )}
-                                                            aria-hidden="true"/>
-                                                    </Popover.Button>
+                                                            open ? 'text-gray-600' : 'text-gray-400',
+                                                            'ml-2 h-5 w-5 group-hover:text-gray-500'
+                                                        )}
+                                                        aria-hidden="true" />
+                                                </Popover.Button>
 
-                                                    <Transition
-                                                        show={open}
-                                                        as={Fragment}
-                                                        enter="transition ease-out duration-200"
-                                                        enterFrom="opacity-0 translate-y-1"
-                                                        enterTo="opacity-100 translate-y-0"
-                                                        leave="transition ease-in duration-150"
-                                                        leaveFrom="opacity-100 translate-y-0"
-                                                        leaveTo="opacity-0 translate-y-1">
-                                                        <Popover.Panel
-                                                            static
-                                                            className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                                                            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                                                                <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                                                    {eachNav.navigation_items.map((item) => (
-                                                                        <a key={item.name}
-                                                                           href={item.url}
-                                                                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                                                            <div className="ml-4">
-                                                                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                                                            </div>
-                                                                        </a>
-                                                                    ))}
-                                                                </div>
+                                                <Transition
+                                                    show={open}
+                                                    as={Fragment}
+                                                    enter="transition ease-out duration-200"
+                                                    enterFrom="opacity-0 translate-y-1"
+                                                    enterTo="opacity-100 translate-y-0"
+                                                    leave="transition ease-in duration-150"
+                                                    leaveFrom="opacity-100 translate-y-0"
+                                                    leaveTo="opacity-0 translate-y-1">
+                                                    <Popover.Panel
+                                                        static
+                                                        className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                                                        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                                            <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                                                {eachNav.navigation_items.map((item) => (
+                                                                    <a key={item.name}
+                                                                        href={item.url}
+                                                                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                                                        <div className="ml-4">
+                                                                            <p className="text-base font-medium text-gray-900">{item.name}</p>
+                                                                        </div>
+                                                                    </a>
+                                                                ))}
                                                             </div>
-                                                        </Popover.Panel>
-                                                    </Transition>
-                                                </>
-                                            )}
-                                        </Popover>)
+                                                        </div>
+                                                    </Popover.Panel>
+                                                </Transition>
+                                            </>
+                                        )}
+                                    </Popover>)
                                 )}
                             </Popover.Group>
                             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -101,7 +105,7 @@ export default function Navbar({navs}) {
                             <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                                 <div className="px-5 pt-4 flex items-center justify-between">
                                     <div>
-                                        <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'50'} height={'50'}/>
+                                        <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'50'} height={'50'} />
                                     </div>
                                     <div className="-mr-2">
                                         <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
