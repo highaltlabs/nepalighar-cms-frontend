@@ -1,4 +1,3 @@
-import {fetchNavigationItemsAPI} from "../lib/api";
 import Avatar from "../components/Image";
 import Layout from "../components/Layout";
 
@@ -17,11 +16,4 @@ export default function Home() {
         </div>
     </Layout>
   )
-}
-
-export async function getServerSideProps() {
-    const posts = (await fetchNavigationItemsAPI()) || []
-    return {
-        props: { posts },
-    }
 }
