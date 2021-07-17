@@ -30,7 +30,7 @@ export default function Navbar({ navs }) {
                             <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                 {navs && navs.map((eachNav, index) =>
                                 ((eachNav.navigation_items.length === 0) ?
-                                    <Link href={`${eachNav.name === 'Home' ? '/' : '/' + eachNav.sort_order}`} key={index}>
+                                    <Link href={`${eachNav.name === 'Home' ? '/' : eachNav.url }`} key={index}>
                                         <a className="text-base font-small text-dark hover:text-dark-900"
                                             title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                             {eachNav.name}
@@ -118,7 +118,7 @@ export default function Navbar({ navs }) {
                                     {navs && navs.map((item) => (
                                         <a
                                             key={item.name}
-                                            href={item.href}
+                                            href={item.url}
                                             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                                             {item.name}
                                         </a>
