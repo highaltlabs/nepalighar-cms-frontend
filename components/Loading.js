@@ -1,8 +1,11 @@
 const Loading = () => {
     return (
-        <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden opacity-75 flex flex-col items-center justify-center">
-            <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"/>
-            <h2 className="text-center text-xl font-semibold">Loading...</h2>
+        <div className="min-h-screen flex justify-center items-center">
+            <div className="loader bg-white p-5 rounded-full flex space-x-3">
+                <div className="w-5 h-5 bg-gray-500 rounded-full animate-bounce"/>
+                <div className="w-5 h-5 bg-gray-500 rounded-full animate-bounce"/>
+                <div className="w-5 h-5 bg-gray-500 rounded-full animate-bounce"/>
+            </div>
         </div>
     )
 }
