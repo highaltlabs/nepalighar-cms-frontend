@@ -10,7 +10,7 @@ const Layout = ({children}) => {
     const [loadingNav, setLoadingNavs] = useState(true)
     useEffect(() => {
         (async () => {
-            const items = await fetchNavigationItemsAPI()
+            const items = await fetchNavigationItemsAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
             setNavItems(items)
             setLoadingNavs(false)
         })()
