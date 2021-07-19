@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import {fetchNavigationItemsAPI} from "../lib/api";
+import {fetchStrapiAPI} from "../lib/api";
 import {useEffect, useState} from "react";
 import Loading from "./Loading";
 
@@ -10,7 +10,7 @@ const Layout = ({children}) => {
     const [loadingNav, setLoadingNavs] = useState(true)
     useEffect(() => {
         (async () => {
-            const items = await fetchNavigationItemsAPI()
+            const items = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
             setNavItems(items)
             setLoadingNavs(false)
         })()
