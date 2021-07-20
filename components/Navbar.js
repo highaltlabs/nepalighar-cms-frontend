@@ -31,7 +31,7 @@ export default function Navbar({ navs }) {
                                 {navs && navs.map((eachNav, index) =>
                                 ((eachNav.navigation_items.length === 0) ?
                                     <Link href={`${eachNav.name === 'Home' ? '/' : eachNav.url }`} key={index}>
-                                        <a className="text-base font-small text-dark hover:text-dark-900"
+                                        <a className="text-base font-small text-white hover:text-dark-900"
                                             title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                             {eachNav.name}
                                         </a>
@@ -41,8 +41,8 @@ export default function Navbar({ navs }) {
                                             <>
                                                 <Popover.Button
                                                     className={classNames(
-                                                        open ? 'text-dark-900' : 'text-dark-900',
-                                                        'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white-500'
+                                                        'text-white',
+                                                        'group rounded-md inline-flex items-center text-base font-medium focus:outline-none active:white'
                                                     )}>
                                                     <span>{eachNav.name}</span>
                                                     <ChevronDownIcon
