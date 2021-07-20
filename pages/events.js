@@ -4,7 +4,7 @@ const ActivitiesPage = () => {
     return (
         <Layout>
             <div className="relative flex items-center justify-center p-96 overflow-hidden">
-                Activities Page
+                Events Page
             </div>
         </Layout>
     )
