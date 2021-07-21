@@ -1,10 +1,12 @@
 import Layout from "../components/Layout";
-import Avatar from "../components/Image";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import {fetchStrapiAPI} from "../lib/api";
 
-const CommunityPage = () => {
+const CommunityPage = ({navItems}) => {
     return (
         <Layout>
+            <Navbar navs={navItems}/>
             <div className="relative">
                 <Image
                     layout="fill"
@@ -37,3 +39,12 @@ const CommunityPage = () => {
 }
 
 export default CommunityPage
+
+export async function getServerSideProps() {
+    const navItems = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
+    return {
+        props: {
+            navItems,
+        },
+    }
+}
