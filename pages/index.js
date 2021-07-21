@@ -1,9 +1,12 @@
 import Avatar from "../components/Image";
 import Layout from "../components/Layout";
+import Navbar from "../components/Navbar";
+import {fetchStrapiAPI} from "../lib/api";
 
-export default function Home() {
+export default function Home({navItems}) {
     return (
         <Layout>
+            <Navbar navs={navItems}/>
             <div className="relative flex items-center justify-center overflow-hidden" style={{height: '60vh'}}>
                 <video autoPlay loop muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none">
                     <source
@@ -35,4 +38,13 @@ export default function Home() {
             </div>
         </Layout>
     )
+}
+
+export async function getServerSideProps() {
+    const navItems = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
+    return {
+        props: {
+            navItems,
+        },
+    }
 }

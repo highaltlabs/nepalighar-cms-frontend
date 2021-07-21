@@ -1,9 +1,12 @@
 import Layout from "../components/Layout";
 import Image from 'next/image'
+import {fetchStrapiAPI} from "../lib/api";
+import Navbar from "../components/Navbar";
 
-const FeaturePage = () => {
+const FeaturePage = ({navItems}) => {
     return (
         <Layout>
+            <Navbar navs={navItems}/>
             <div className="relative">
                 <Image
                     layout="fill"
@@ -36,3 +39,12 @@ const FeaturePage = () => {
 }
 
 export default FeaturePage
+
+export async function getServerSideProps() {
+    const navItems = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
+    return {
+        props: {
+            navItems,
+        },
+    }
+}
