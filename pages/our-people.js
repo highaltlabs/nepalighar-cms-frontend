@@ -40,7 +40,7 @@ export async function getServerSideProps() {
     const navItems = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
     return {
         props: {
-            navItems,
-        },
+            navItems
+        }
     }
 }

@@ -1,12 +1,12 @@
 import Layout from "../components/Layout";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
-import {fetchStrapiAPI} from "../lib/api";
+import { fetchStrapiAPI } from "../lib/api";
 
-const ActivitiesPage = ({navItems}) => {
+const ActivitiesPage = ({ navItems }) => {
     return (
         <Layout>
-            <Navbar navs={navItems}/>
+            <Navbar navs={navItems} />
             <div className="relative">
                 <Image
                     layout="fill"
@@ -14,9 +14,9 @@ const ActivitiesPage = ({navItems}) => {
                     src={'/flag.jpg'}
                     alt={'Flag Features'}
                 />
-                <div className="relative z-1" style={{height: '60vh'}}/>
+                <div className="relative z-1" style={{ height: '60vh' }} />
             </div>
-            <div className="py-12 bg-white" style={{height: '35vh'}}>
+            <div className="py-12 bg-white" style={{ height: '35vh' }}>
                 <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
                     <div className="lg:text-center">
                         <p className="mt-2 max-w-2xl text-md text-gray-500 lg:mx-auto">
@@ -40,7 +40,7 @@ export async function getServerSideProps() {
     const navItems = await fetchStrapiAPI('/navigation-menu-items?_sort=sort_order:ASC,updated_at:ASC')
     return {
         props: {
-            navItems,
-        },
+            navItems
+        }
     }
 }
