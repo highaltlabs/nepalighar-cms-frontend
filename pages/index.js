@@ -27,7 +27,7 @@ export default function Home({navItems}) {
                             Nepal America Sociocultural Exchange Society, Inc, USA (Nepali Ghar) is a registered 501(C)
                             non-profit organization in the state of Colorado.
                         </p>
-                        <p className="mt-2 max-w-3xl text-lg text-gray-500 lg:mx-auto font-serif">
+                        <p className="mt-2 max-w-3xl text-lg text-gray-600 lg:mx-auto font-serif">
                             The organization established to serve our community by promoting congenial relationships and
                             mutual respect among the Nepalese residing
                             in Colorado as well as other local communities. Nepali Ghar’s main focus to develop
@@ -36,6 +36,9 @@ export default function Home({navItems}) {
                             we solemnly initiate a campaign to advocate establishing a community home “Nepali Ghar”
                             and serving our society.
                         </p>
+                        <div className="pt-5 text-2xl">
+                            <Avatar src={'/hands.png'} alt={'hands logo'} width={''} height={'300'}/> <br/>
+                        </div>
                     </div>
                 </div>
             </div>
