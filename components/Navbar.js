@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import {Fragment, useEffect, useState} from 'react'
 import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -13,8 +13,19 @@ function classNames(...classes) {
 }
 
 export default function Navbar({ navs }) {
+    const [isScrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", (e) => {
+            window.scrollY > 0 && e ?  setScrolled(true) : setScrolled(false)
+        });
+        return () => {
+            window.removeEventListener("scroll", (e) => {});
+        };
+    }, [isScrolled]);
     return (
-        <Popover className="absolute z-30 w-full bg-transparent">
+        <Popover className={`z-50 fixed top-0 left-0 w-screen transition-all duration-200
+          ${isScrolled ? "bg-white" : "bg-transparent"}`}>
             {({ open }) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
@@ -31,7 +42,7 @@ export default function Navbar({ navs }) {
                                 {navs && navs.map((eachNav, index) =>
                                 ((eachNav.navigation_items.length === 0) ?
                                     <Link href={`${eachNav.name === 'Home' ? '/' : eachNav.url }`} key={index}>
-                                        <a className="text-base font-small text-gray-300 hover:text-dark-900"
+                                        <a className={`text-base font-small hover:text-dark-900 ${isScrolled ? "text-black" : "text-white"}`}
                                             title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                             {eachNav.name}
                                         </a>
@@ -41,7 +52,7 @@ export default function Navbar({ navs }) {
                                             <>
                                                 <Popover.Button
                                                     className={classNames(
-                                                        'text-gray-300',
+                                                        `${isScrolled ? "text-black" : "text-white"}`,
                                                         'group rounded-md inline-flex items-center text-base font-medium focus:outline-none active:white'
                                                     )}>
                                                     <span>{eachNav.name}</span>
