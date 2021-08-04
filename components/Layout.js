@@ -11,7 +11,6 @@ const Layout = ({children}) => {
             <main className="flex flex-col w-full h-full flex-1 text-center">
                {children}
             </main>
-            <Footer/>
         </div>
     );
 }
