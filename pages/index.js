@@ -42,6 +42,18 @@ export default function Home({navItems}) {
                         </div>
                     </div>
                 </div>
+                <div className="flex info-div">
+                    <div className="info-detail flex flex-wrap content-center">
+                        <p className="max-w-2xl text-3xl font-black lg:mx-auto font-serif">
+                            Nepali Ghar’s main focus to develop
+                            community by transcending the differences of age, race,
+                            color, origin, sexual orientation, religion, belief, disability and nationality,
+                            we solemnly initiate a campaign to advocate establishing a community home “Nepali Ghar”
+                            and serving our society.
+                        </p>
+                    </div>
+                    <div className="info-background"/>
+                </div>
             </div>
         </Layout>
     )
