@@ -16,13 +16,16 @@
 
 
 .info-div {
-    background-color: #F3F6F8;
-    height: 45vh;
+    height: 40vh;
 }
 
 .info-detail {
     width: 65%;
     font-size: 3rem;
+    background-image: url("/moto.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .info-background {

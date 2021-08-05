@@ -26,14 +26,14 @@ export default function Navbar({navs}) {
     }, [isScrolled]);
     return (
         <Popover className={`z-50 fixed top-0 left-0 w-screen transition-all duration-200
-          ${isScrolled ? "bg-white" : "bg-transparent"}`}>
+          ${isScrolled ? "bg-gray-900" : "bg-transparent"}`}>
             {({open}) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
-                        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
-                            <div className="flex justify-start lg:w-0 lg:flex-1">
-                                <div className="self-center pl-5">
-                                    <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'75'} height={'75'}/> <br/>
+                        <div className="flex justify-between items-center py-2 md:justify-start md:space-x-10">
+                            <div className="flex justify-end lg:w-0 lg:flex-1">
+                                <div className="pr-10">
+                                    <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'70'} height={'70'}/>
                                 </div>
                             </div>
                             <div className="-mr-2 -my-2 md:hidden">
@@ -47,7 +47,7 @@ export default function Navbar({navs}) {
                                 {navs && navs.map((eachNav, index) =>
                                     ((eachNav.navigation_items.length === 0) ?
                                         <Link href={`${eachNav.name === 'Home' ? '/' : eachNav.url}`} key={index}>
-                                            <a className={`text-base font-small hover:text-dark-900 ${isScrolled ? "text-black" : "text-white"}`}
+                                            <a className={`text-base font-small hover:text-dark-900 ${isScrolled ? "text-white" : "text-white"}`}
                                                title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                                 {eachNav.name}
                                             </a>
@@ -57,7 +57,7 @@ export default function Navbar({navs}) {
                                                 <>
                                                     <Popover.Button
                                                         className={classNames(
-                                                            `${isScrolled ? "text-black" : "text-white"}`,
+                                                            `${isScrolled ? "text-white" : "text-white"}`,
                                                             'group rounded-md inline-flex items-center text-base font-medium focus:outline-none active:white'
                                                         )}>
                                                         <span>{eachNav.name}</span>
