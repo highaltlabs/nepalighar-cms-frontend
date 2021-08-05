@@ -30,10 +30,10 @@ export default function Navbar({navs}) {
             {({open}) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
-                        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
-                            <div className="flex justify-start lg:w-0 lg:flex-1">
-                                <div className="self-center pl-5">
-                                    <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'75'} height={'75'}/> <br/>
+                        <div className="flex justify-between items-center py-2 md:justify-start md:space-x-10">
+                            <div className="flex justify-end lg:w-0 lg:flex-1">
+                                <div className="pr-10">
+                                    <Avatar src={'/nepali-ghar-logo.png'} alt={'nav logo'} width={'70'} height={'70'}/>
                                 </div>
                             </div>
                             <div className="-mr-2 -my-2 md:hidden">
