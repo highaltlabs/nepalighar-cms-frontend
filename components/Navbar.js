@@ -26,7 +26,7 @@ export default function Navbar({navs}) {
     }, [isScrolled]);
     return (
         <Popover className={`z-50 fixed top-0 left-0 w-screen transition-all duration-200
-          ${isScrolled ? "bg-white" : "bg-transparent"}`}>
+          ${isScrolled ? "bg-gray-900" : "bg-transparent"}`}>
             {({open}) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6">
@@ -47,7 +47,7 @@ export default function Navbar({navs}) {
                                 {navs && navs.map((eachNav, index) =>
                                     ((eachNav.navigation_items.length === 0) ?
                                         <Link href={`${eachNav.name === 'Home' ? '/' : eachNav.url}`} key={index}>
-                                            <a className={`text-base font-small hover:text-dark-900 ${isScrolled ? "text-black" : "text-white"}`}
+                                            <a className={`text-base font-small hover:text-dark-900 ${isScrolled ? "text-white" : "text-white"}`}
                                                title={`/${eachNav.name === 'Home' ? eachNav.name : ''}`}>
                                                 {eachNav.name}
                                             </a>
@@ -57,7 +57,7 @@ export default function Navbar({navs}) {
                                                 <>
                                                     <Popover.Button
                                                         className={classNames(
-                                                            `${isScrolled ? "text-black" : "text-white"}`,
+                                                            `${isScrolled ? "text-white" : "text-white"}`,
                                                             'group rounded-md inline-flex items-center text-base font-medium focus:outline-none active:white'
                                                         )}>
                                                         <span>{eachNav.name}</span>
