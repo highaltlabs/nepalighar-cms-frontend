@@ -16,7 +16,7 @@ export default function Home({navItems}) {
                 </video>
             </div>
             <div style={{height:'45vh'}}>
-                <div className="py-7 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="py-7 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-fixed">
                     <div className="lg:text-center">
                         <div className="p-2 text-2xl">
                             <Avatar src={'/welcome-to.svg'} alt={'namaste logo'} width={''} height={'120'}/> <br/>
@@ -35,6 +35,10 @@ export default function Home({navItems}) {
                             className="mt-7 mb-6 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
                             See more...
                         </button>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center bg-fixed bg-center bg-cover custom-img">
+                    <div className="p-5 text-2xl text-white bg-purple-300 bg-opacity-0 rounded-xl">
                         <div className="pt-9 text-2xl">
                             <Avatar src={'/namaste.svg'} alt={'namaste logo'} width={''} height={'100'}/> <br/>
                         </div>
@@ -49,8 +53,6 @@ export default function Home({navItems}) {
                             Our main focus is to develop
                             community by transcending the differences of age, race,
                             color, origin, sexual orientation, religion, belief, disability and nationality.
-                            We solemnly initiate a campaign to advocate establishing a community home “Nepali Ghar”
-                            and serving our society.
                         </p>
                     </div>
                     <div className="info-background"/>
