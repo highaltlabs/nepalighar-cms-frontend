@@ -1,12 +1,29 @@
 import Head from "next/head";
+import {useEffect, useState} from "react";
 
 const Layout = ({children}) => {
+    const [isVisible, setIsVisible] = useState(false);
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
     };
+
+    useEffect(() => {
+        // Button is displayed after scrolling for 500 pixels
+        const toggleVisibility = () => {
+            if (window.pageYOffset > 500) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener("scroll", toggleVisibility);
+
+        return () => window.removeEventListener("scroll", toggleVisibility);
+    }, []);
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -18,6 +35,7 @@ const Layout = ({children}) => {
                 <div className="h-auto w-full">
                     {children}
                 </div>
+                {isVisible &&
                 <div className="absolute bottom-0 right-0 h-16 w-16 text-black bg-black m-5
                 bg-opacity-10 flex justify-center pt-5 rounded cursor-pointer text-lg"
                      onClick={scrollToTop}>
@@ -25,7 +43,7 @@ const Layout = ({children}) => {
                          stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7"/>
                     </svg>
-                </div>
+                </div>}
             </main>
         </div>
     );
