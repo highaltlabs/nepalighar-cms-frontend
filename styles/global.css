@@ -39,3 +39,57 @@
 .custom-img {
     background-image: url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80");
 }
+
+
+.our-work {
+    height: 48vh;
+}
+
+
+.our-work-video, .our-work-info {
+    width: 50%;
+}
+
+
+.our-work-intro {
+    height: 45vh;
+}
+
+
+.work-background {
+    width: 65%;
+    background-image: url("/stupa.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.recent-posts-grid {
+    /*height: 40vh;*/
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-image: linear-gradient(180deg, #E1EAF5  0%, #A7CDF3 99%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
