@@ -2,6 +2,7 @@ import Avatar from "../components/Image";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import {fetchStrapiAPI} from "../lib/api";
+import Footer from "../components/Footer";
 
 export default function Home({navItems}) {
     return (
@@ -26,7 +27,7 @@ export default function Home({navItems}) {
                             organization
                             in the state of Colorado.
                         </p>
-                        <p className="mt-3 max-w-2xl text-xl text-gray-600 lg:mx-auto font-serif">
+                        <p className="mt-3 max-w-2xl text-xl text-gray-600 mx-auto font-serif">
                             The organization established to serve our community by promoting congenial relationships and
                             mutual respect among the Nepalese residing
                             in Colorado as well as other local communities.
@@ -49,7 +50,7 @@ export default function Home({navItems}) {
                 </div>
                 <div className="flex info-div bg-blue-50">
                     <div className="info-detail flex flex-wrap content-center">
-                        <p className="max-w-2xl text-3xl font-black lg:mx-auto font-serif">
+                        <p className="max-w-2xl md:text-xl lg:text-3xl sm:text-md xs:text-sm font-black lg:mx-auto font-serif">
                             Our main focus is to develop
                             community by transcending the differences of age, race,
                             color, origin, sexual orientation, religion, belief, disability and nationality.
@@ -84,15 +85,13 @@ export default function Home({navItems}) {
                         </div>
                     </div>
                 </div>
-                <div className="recent-post-intro flex flex-col items-center justify-center">
-                    <div className="mt-10">
+                <div className="mt-10 recent-post-intro flex flex-col items-center justify-center">
+                    <div>
                         <Avatar src={'/recent.svg'} alt={'namaste logo'} width={''} height={'120'}/>
                     </div>
-                    <div className="mt-10">
-                        <p className="mt-1 max-w-5xl text-2xl text-md text-black lg:mx-auto pb-7">
-                            Get updates on recent posts and blogs.
-                        </p>
-                    </div>
+                    <p className="mt-1 max-w-5xl text-2xl text-md text-black lg:mx-auto pb-7">
+                        Get updates on recent posts and blogs.
+                    </p>
                     <div className="recent-posts-grid">
                         <div className="flex md:flex-row sm:flex-col xs:flex-col h-full">
                             <div className="pt-10 pb-10 align-middle">
@@ -141,6 +140,7 @@ export default function Home({navItems}) {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </Layout>
     )
 }
@@ -153,3 +153,4 @@ export async function getServerSideProps() {
         },
     }
 }
+
