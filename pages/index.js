@@ -43,9 +43,6 @@ export default function Home({navItems}) {
                         <div className="pt-9 text-2xl">
                             <Avatar src={'/namaste.svg'} alt={'namaste logo'} width={''} height={'100'}/> <br/>
                         </div>
-                        <div className="pt-5 pb-5 text-2xl">
-                            <Avatar src={'/hands.svg'} alt={'hands logo'} width={''} height={'290'}/> <br/>
-                        </div>
                     </div>
                 </div>
                 <div className="flex info-div bg-blue-50">
