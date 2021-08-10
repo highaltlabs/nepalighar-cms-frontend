@@ -85,61 +85,49 @@ export default function Home({navItems}) {
                         </div>
                     </div>
                 </div>
-                <div className="mt-10 recent-post-intro flex flex-col items-center justify-center">
-                    <div>
+                <div className="py-12 mb-10">
+                    <h3 className="text-2xl tracking-widest text-green-600 text-center">
                         <Avatar src={'/recent.svg'} alt={'namaste logo'} width={''} height={'120'}/>
-                    </div>
-                    <p className="mt-1 max-w-5xl text-2xl text-md text-black lg:mx-auto pb-7">
-                        Get updates on recent posts and blogs.
-                    </p>
-                    <div className="recent-posts-grid">
-                        <div className="flex md:flex-row sm:flex-col xs:flex-col h-full">
-                            <div className="pt-10 pb-10 align-middle">
-                                <Avatar src={'/idol.png'} alt={'namaste logo'} width={''} height={'320'}/>
-                                <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">Lorem
-                                    ipsum dolor</h1>
-                                <div className="flex justify-center">
-                                    <p className="hover:cursor-pointer py-3 w-10/12 text-gray-600 leading-6">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    </p>
+                    </h3>
+                    <h4 className="mt-8 text-center text-3xl text-black-600 font-bold">Updates on Posts and Blogs</h4>
+
+                    <div className="md:flex md:justify-center md:space-x-8 md:px-14">
+                        <div className="mt-16 py-4 px-4 bg-whit w-72 bg-blue-50 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+                            <div className="w-sm">
+                                <img className="w-64" src="/idol.png" alt="" style={{height: '220px'}}/>
+                                <div className="mt-4 text-center">
+                                    <h1 className="text-xl font-bold">Communications</h1>
+                                    <p className="mt-4 text-gray-600">Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.</p>
+                                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
                                 </div>
-                                <button className="mt-5 mb-6 bg-white hover:bg-gray-100 text-gray-800 font-semibold
-                                    py-2 px-4 border border-gray-400 rounded shadow">
-                                    See more...
-                                </button>
                             </div>
-                            <div className="pt-10 pb-10">
-                                <Avatar src={'/eyes.png'} alt={'namaste logo'} width={''} height={'320'}/>
-                                <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">Lorem
-                                    ipsum dolor</h1>
-                                <div className="flex justify-center">
-                                    <p className="hover:cursor-pointer py-3 w-10/12 text-gray-600 leading-6">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    </p>
+                        </div>
+
+                        <div className="mt-16 py-4 px-4 bg-whit w-72 bg-blue-50 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+                            <div className="w-sm">
+                                <img className="w-64" src="/eyes.png" alt="" style={{height: '220px'}}/>
+                                <div className="mt-4 text-center">
+                                    <h1 className="text-xl font-bold">Buddha Eyes</h1>
+                                    <p className="mt-4 text-gray-600">Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Risus feugiat.</p>
+                                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
                                 </div>
-                                <button className="mt-5 mb-6 bg-white hover:bg-gray-100 text-gray-800 font-semibold
-                                    py-2 px-4 border border-gray-400 rounded shadow">
-                                    See more...
-                                </button>
                             </div>
-                            <div className="pt-10 pb-10">
-                                <Avatar src={'/food.png'} alt={'namaste logo'} width={''} height={'320'}/>
-                                <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">Lorem
-                                    ipsum dolor</h1>
-                                <div className="flex justify-center">
-                                    <p className="hover:cursor-pointer py-3 w-10/12 text-gray-600 leading-6">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    </p>
+                        </div>
+
+                        <div className="mt-16 py-4 px-4 bg-whit w-72 bg-blue-50 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+                            <div className="w-sm">
+                                <img className="w-64" src="/food.png" alt="" style={{height: '220px'}} />
+                                <div className="mt-4 text-center">
+                                    <h1 className="text-xl font-bold">Traditional Food</h1>
+                                    <p className="mt-4 text-gray-600">Nisl purus in mollis nunc sed id semper. Rhoncus aenean vel elit scelerisque mauris.</p>
+                                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
                                 </div>
-                                <button className="mt-5 mb-6 bg-white hover:bg-gray-100 text-gray-800 font-semibold
-                                    py-2 px-4 border border-gray-400 rounded shadow">
-                                    See more...
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br/>
             <Footer/>
         </Layout>
     )
