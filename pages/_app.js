@@ -5,7 +5,7 @@ config.autoAddCss = false
 import '../styles/global.css';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+    return <Component {...pageProps} />
 }
 
 export default MyApp
